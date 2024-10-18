@@ -8,11 +8,23 @@ int main(){
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 
-	int n;
-	cin >> n;
+	int a, b;
+	char s;
+	cin >> a >> s >> b;
 
-	double mod = n % 3;
-	cout << mod << endl; 
-	
+	if(s == '>' && a > b){
+		cout << "Right" << endl;
+	}
+	else if(s == '<' && a < b){
+		cout << "Right" << endl;
+	}
+	else if(s == '=' && a == b){
+		cout << "Right" << endl;
+	}
+	else{
+		cout << "Wrong" << endl;
+	}
+
+		
 	return 0;	
 }
