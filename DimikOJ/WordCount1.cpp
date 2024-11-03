@@ -13,24 +13,16 @@ int main(){
 	cin.ignore();
 
 	while(t--){
-		char ch[10004];
-		cin.getline(ch, 10004);
+		char ch[10006];
+		cin.getline(ch, 10006);
 		int len = strlen(ch);
-		int index = 0;
-		while(index == ' '){
-			index++;
-		}
+
 		int cnt = 1;
-		for(int i = index + 1; i < len; i++){
-			if(ch[i] == ' ' && isdigit(ch[i + 1]) || ch[i + 1] == '-'){
-				cnt++;
-			}
+		for(int i = 0; i < len; i++){
+			if(ch[i] == ' ') cnt++;
 		}
-		cout << cnt << endl;
-		
+		cout << "Count = " << cnt << endl;
 	} 
-
-
 	
 	return 0;	
 }
