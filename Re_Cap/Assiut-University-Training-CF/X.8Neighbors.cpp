@@ -24,6 +24,9 @@ int main(){
 				if((i == 1 and j == 1) || (i == n and j == n) || (i == 1 and j == n) || (i == n and j == 1) ){
 					cout << a[i][j];
 				}
+				else{
+					
+				}
 			}
 			else{
 				cout << ' ';
