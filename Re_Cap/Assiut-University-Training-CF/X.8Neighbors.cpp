@@ -10,31 +10,30 @@ int main(){
 
 	int n, m;
 	cin >> n >> m;
-	char a[n + 1][m + 1];
+
+	char ch[n + 1][m + 1];
 
 	for(int i = 1; i <= n; i++){
 		for(int j = 1; j <= m; j++){
-			cin >> a[i][j];
+			cin >> ch[i][j];
 		}
+	} 
+
+	int dot_i, dot_j;
+	cin >> dot_i >> dot_j;
+
+
+
+	bool is_neighbor = true;
+	if((dot_i - 1 >= 1 and ch[dot_i - 1][dot_j] != 'x') or (dot_i - 1 >= 1 and dot_j - 1 >= 1  and ch[dot_i - 1][dot_j - 1] != 'x') or (dot_j - 1 >= 1 and ch[dot_i][dot_j -1] != 'x')
+		or (dot_i + 1 <= n and dot_j - 1 >= 1  and ch[dot_i + 1][dot_j - 1] != 'x') or (dot_i + 1 <= n and ch[dot_i + 1][dot_j] != 'x') or (dot_i + 1 <= n and dot_j + 1 <= m and ch[dot_i + 1][dot_j + 1] != 'x')
+		or (dot_j + 1 <= m and ch[dot_i ][dot_j + 1] != 'x') or (dot_i - 1 >= 1 and dot_j + 1 <= m and ch[dot_i - 1][dot_j + 1] != 'x')){
+		is_neighbor = false;
 	}
 
-	for(int i = 1; i <= n; i++){
-		for(int j = 1; j <= m; j++){
-			if(i == 1 || j == 1 || j == n || i == n){
-				if((i == 1 and j == 1) || (i == n and j == n) || (i == 1 and j == n) || (i == n and j == 1) ){
-					cout << a[i][j];
-				}
-				else{
-					
-				}
-			}
-			else{
-				cout << ' ';
-			}
-		}
-		cout << endl;
-	}
+	if(is_neighbor) cout << "yes" << endl;
+	else cout << "no" << endl;
 
-	
+
 	return 0;	
 }
