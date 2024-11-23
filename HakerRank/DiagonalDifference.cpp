@@ -28,6 +28,7 @@ int main(){
     sec_dia += a[i][n + 1 - i];
    }
 
+
    int abs_value  = abs(first_dia - sec_dia);
 
    cout << abs_value << endl; 
